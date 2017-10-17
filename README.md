@@ -1,14 +1,11 @@
-# electron-webpack-quick-start
-> A bare minimum project structure to get started developing with [`electron-webpack`](https://github.com/electron-userland/electron-webpack).
+# Spotifube
 
-Thanks to the power of `electron-webpack` this template comes packed with...
+> A `GUI` for the https://github.com/ritiek/spotify-downloader/ project.
 
-* Use of [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server) for development
-* HMR for both `renderer` and `main` processes
-* Use of [`babel-preset-env`](https://github.com/babel/babel-preset-env) that is automatically configured based on your `electron` version
-* Use of [`electron-builder`](https://github.com/electron-userland/electron-builder) to package and build a distributable electron application
+## How this works
+`spotify-downloader` is a CLI that uses Spotify tracks/playlists to match youtube videos and download them as mp3, including id3, album art, etc.
 
-Make sure to check out [`electron-webpack`'s documentation](https://webpack.electron.build/) for more details.
+This project should provide initially (MVP) a simple UI to drag and drop playlist links, fetch the tracks inside of these playlists and provide a way to the user download these songs into a folder.
 
 ## Getting Started
 Simply clone down this reposity, install dependencies, and get started on your application.
