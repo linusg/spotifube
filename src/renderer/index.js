@@ -2,7 +2,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-import Main from './components/main';
+import { Main } from './components/main';
 
 import './scss/main.scss';
 
