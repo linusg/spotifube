@@ -5,7 +5,8 @@ export class PlaylistInput extends React.Component {
     super(props);
     this.state = {
       playlistUrl: '',
-      submitDisabled: true
+      submitDisabled: true,
+      formProcessed: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,13 +23,14 @@ export class PlaylistInput extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Should process playlist here: ' + this.state.playlistUrl);
+    this.setState({formProcessed: true});
+    console.log('Should process playlist here: ' + this.state.playlistUrl);
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="m-40">
+      <form onSubmit={this.handleSubmit} id="form-playlist-url" className={this.state.formProcessed ? 'm-40 slide-up' : 'm-40'}>
         <input type="text" value={this.state.playlistUrl} onChange={this.handleChange} placeholder="Enter Spotify playlist URL" className="mb-20 block full-width" />
         <input type="submit" value="Fetch" disabled={this.state.submitDisabled} className="bg-green fg-light block centered" />
       </form>

@@ -79,3 +79,14 @@ input[type=text] {
 }
 
 input[placeholder] { text-overflow: ellipsis; }
+
+#form-playlist-url {
+  position: relative;
+  transition: opacity $transition-duration ease-in,
+              margin $transition-duration ease-in;
+
+  &.slide-up {
+    opacity: 0;
+    margin-top: -79px !important;
+  }
+}
