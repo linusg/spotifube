@@ -10,7 +10,7 @@ let mainWindow;
 
 function createMainWindow() {
   // Construct new BrowserWindow
-  const window = new BrowserWindow();
+  const window = new BrowserWindow({title: 'Spotifube'});
 
   // Set url for `win`
     // points to `webpack-dev-server` in development
@@ -22,6 +22,8 @@ function createMainWindow() {
   if (isDevelopment) {
     window.webContents.openDevTools();
   }
+
+  window.setMenu(null);
 
   window.loadURL(url);
 
