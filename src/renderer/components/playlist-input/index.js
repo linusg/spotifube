@@ -31,8 +31,8 @@ export class PlaylistInput extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} id="form-playlist-url" className={this.state.formProcessed ? 'm-40 slide-up' : 'm-40'}>
-        <input type="text" value={this.state.playlistUrl} onChange={this.handleChange} placeholder="Enter Spotify playlist URL" className="mb-20 block full-width" />
-        <input type="submit" value="Fetch" disabled={this.state.submitDisabled} className="bg-green fg-light block centered" />
+        <input type="text" value={this.state.playlistUrl} onChange={this.handleChange} placeholder="Enter Spotify playlist URL" className="mb-40 block full-width" />
+        <input type="submit" value="Fetch this playlist" disabled={this.state.submitDisabled} className="bg-green fg-light block centered" />
       </form>
     );
   }

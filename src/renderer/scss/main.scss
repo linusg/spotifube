@@ -42,12 +42,13 @@ body {
 
 button,
 input[type=submit] {
-  padding: 8px 36px;
-  border-radius: 16px;
-  border: 1px solid $color-light;
+  padding: 15px 20px;
+  min-width: 120px;
+  border-radius: 40px;
+  border: none;
   text-transform: uppercase;
   font-size: 11px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   // for disabled state
   transition: filter $transition-duration linear;
 
@@ -73,9 +74,11 @@ input[type=submit] {
 
 input[type=text] {
   border: none;
-  padding: 7px 10px;
-  border-radius: 14px;
-  background: $color-light;
+  padding: 20px 25px;
+  border-radius: 50px;
+  background: $color-bg;
+  color: white;
+  font-size: 20px;
 }
 
 input[placeholder] { text-overflow: ellipsis; }
