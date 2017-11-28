@@ -4,7 +4,8 @@ export class PlaylistInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playlistUrl: ''
+      playlistUrl: '',
+      submitDisabled: true
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -12,7 +13,12 @@ export class PlaylistInput extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({playlistUrl: event.target.value});
+    let playlistUrl = event.target.value;
+    let submitDisabled = playlistUrl === '';
+    this.setState({
+      playlistUrl: playlistUrl,
+      submitDisabled: submitDisabled
+    });
   }
 
   handleSubmit(event) {
@@ -24,7 +30,7 @@ export class PlaylistInput extends React.Component {
     return (
       <form onSubmit={this.handleSubmit} className="m-40">
         <input type="text" value={this.state.playlistUrl} onChange={this.handleChange} placeholder="Enter Spotify playlist URL" className="mb-20 block full-width" />
-        <input type="submit" value="Fetch" className="bg-green fg-light block centered" />
+        <input type="submit" value="Fetch" disabled={this.state.submitDisabled} className="bg-green fg-light block centered" />
       </form>
     );
   }
