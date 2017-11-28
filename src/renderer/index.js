@@ -4,6 +4,8 @@ import React from 'react';
 
 import Main from './components/main';
 
+import './scss/main.scss';
+
 ReactDOM.render(
   <Main />,
   document.getElementById('app')
