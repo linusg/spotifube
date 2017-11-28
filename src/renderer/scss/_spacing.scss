@@ -1,0 +1,15 @@
+$spacing-directions: ('right', 'left', 'top', 'bottom');
+$spacing-sizes: (5, 10, 15, 20, 25, 30, 35, 40);
+
+@each $size in $spacing-sizes {
+  @each $direction in $spacing-directions {
+    .p#{str-slice($direction, 1, 1)}-#{$size} { padding-#{$direction}: #{$size}px !important; }
+    .m#{str-slice($direction, 1, 1)}-#{$size} { margin-#{$direction}: #{$size}px !important; }
+  }
+  .p-#{$size} { padding: #{$size}px !important; }
+  .px-#{$size} { padding-left: #{$size}px !important; padding-right: #{$size}px !important; }
+  .py-#{$size} { padding-top: #{$size}px !important; padding-bottom: #{$size}px !important; }
+  .m-#{$size} { margin: #{$size}px !important; }
+  .mx-#{$size} { margin-left: #{$size}px !important; margin-right: #{$size}px !important; }
+  .my-#{$size} { margin-top: #{$size}px !important; margin-bottom: #{$size}px !important; }
+}

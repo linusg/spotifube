@@ -1,8 +1,69 @@
+@import "colors";
+@import "spacing";
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 body {
+  background: $color-dark;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.block {
+  display: block;
+}
+
+.centered {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button,
+input[type=submit] {
+  padding: 8px 36px;
+  border-radius: 16px;
+  border: 1px solid $color-light;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
+
+  &[class^=bg-] {
+    border: 1px solid transparent;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(1.0);
+    filter: brightness(0.7);
+  }
+}
+
+input[type=text] {
+  border: none;
+  padding: 7px 10px;
+  border-radius: 14px;
+  background: $color-light;
 }
