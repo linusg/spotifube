@@ -15,6 +15,8 @@ $transition-duration: 0.3s;
 
 body {
   background: $color-dark;
+  font-size: 14px;
+  font-family: sans-serif;
 }
 
 .container {
@@ -50,7 +52,7 @@ input[type=submit] {
   font-size: 11px;
   letter-spacing: 1px;
   // for disabled state
-  transition: filter $transition-duration linear;
+  transition: opacity $transition-duration linear;
 
   &[class^=bg-] {
     border: 1px solid transparent;
@@ -68,28 +70,90 @@ input[type=submit] {
   &.disabled,
   &[disabled] {
     pointer-events: none;
-    filter: grayscale(0.8);
+    opacity: 0.3;
   }
 }
 
 input[type=text] {
   border: none;
-  padding: 20px 25px;
-  border-radius: 50px;
-  background: $color-bg;
+  padding: 15px 20px;
+  border-radius: 23px;
+  background: rgba(white, 0.08);
   color: white;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 input[placeholder] { text-overflow: ellipsis; }
 
-#form-playlist-url {
-  position: relative;
-  transition: opacity $transition-duration ease-in,
-              margin $transition-duration ease-in;
+.loader {
+  transition: opacity $transition-duration ease-in;
+  opacity: 0;
 
-  &.slide-up {
-    opacity: 0;
-    margin-top: -79px !important;
+  &.visible {
+    transition-delay: $transition-duration*2;
+    opacity: 1;
+  }
+
+  & > div {
+    width: 10px;
+    height: 10px;
+    background-color: $color-green;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 4px;
+    animation: bounce 1.2s infinite ease-in-out both;
+
+    &.bounce2 {
+      animation-delay: 0.2s;
+    }
+
+    &.bounce3 {
+      animation-delay: 0.4s;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 50% { 
+    transform: scale(1);
+  }
+  25% { 
+    transform: scale(1.4);
+  }
+}
+
+#fetch-playlist {
+  form {
+    position: relative;
+    transition: opacity $transition-duration ease-out,
+                transform $transition-duration ease-out;
+    transition-delay: $transition-duration*2;
+
+    &.slide-up {
+      opacity: 0;
+      transform: translateY(-210px);
+      transition: opacity $transition-duration ease-in,
+                  transform $transition-duration ease-in;
+      transition-delay: 0;
+    }
+  }
+
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  #fetch-playlist-result {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+ 
+    &.success { background: $color-green; }
+    &.error { background: $color-red; }
   }
 }

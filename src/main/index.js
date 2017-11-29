@@ -10,7 +10,7 @@ let mainWindow;
 
 function createMainWindow() {
   // Construct new BrowserWindow
-  const window = new BrowserWindow({title: 'Spotifube'});
+  const window = new BrowserWindow({title: 'Spotifube', width: 600, height: 450});
 
   // Set url for `win`
     // points to `webpack-dev-server` in development
