@@ -38,7 +38,8 @@ export class PlaylistInput extends React.Component {
       (code, signal) => {
         if (code !== 0) {
           var resultMessage;
-          if (code === 110) resultMessage = 'Invalid playlist URL!';
+          if (code === 10) resultMessage = 'Invalid playlist URL!';
+          if (code === 11) resultMessage = 'Unable to find playlist, make sure the playlist is set to publicly visible!';
           else resultMessage = 'Unknown error!';
 
           this.setState({
