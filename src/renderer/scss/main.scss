@@ -131,7 +131,7 @@ input[placeholder] { text-overflow: ellipsis; }
 
     &.slide-up {
       opacity: 0;
-      transform: translateY(-210px);
+      transform: translateY(-50px);
       transition: opacity $transition-duration ease-in,
                   transform $transition-duration ease-in;
       transition-delay: 0;
