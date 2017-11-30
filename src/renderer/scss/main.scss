@@ -1,0 +1,95 @@
+@import "colors";
+@import "spacing";
+
+$transition-duration: 0.3s;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  background: $color-dark;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.block {
+  display: block;
+}
+
+.centered {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button,
+input[type=submit] {
+  padding: 15px 20px;
+  min-width: 120px;
+  border-radius: 40px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  // for disabled state
+  transition: filter $transition-duration linear;
+
+  &[class^=bg-] {
+    border: 1px solid transparent;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(1.0);
+    filter: brightness(0.7);
+  }
+
+  &.disabled,
+  &[disabled] {
+    pointer-events: none;
+    filter: grayscale(0.8);
+  }
+}
+
+input[type=text] {
+  border: none;
+  padding: 20px 25px;
+  border-radius: 50px;
+  background: $color-bg;
+  color: white;
+  font-size: 20px;
+}
+
+input[placeholder] { text-overflow: ellipsis; }
+
+#form-playlist-url {
+  position: relative;
+  transition: opacity $transition-duration ease-in,
+              margin $transition-duration ease-in;
+
+  &.slide-up {
+    opacity: 0;
+    margin-top: -79px !important;
+  }
+}
