@@ -39,7 +39,7 @@ export class PlaylistInput extends React.Component {
         if (code !== 0) {
           var resultMessage;
           if (code === 10) resultMessage = 'Invalid playlist URL!';
-          if (code === 11) resultMessage = 'Unable to find playlist, make sure the playlist is set to publicly visible!';
+          else if (code === 11) resultMessage = 'Unable to find playlist, make sure the playlist is set to publicly visible!';
           else resultMessage = 'Unknown error!';
 
           this.setState({
@@ -68,7 +68,7 @@ export class PlaylistInput extends React.Component {
         </form>
         <Loader visible={this.state.formProcessed && !this.state.playlistFetched} />
         {this.state.resultMessage !== '' && this.state.fetchError !== null &&
-          <div id="fetch-playlist-result" class={this.state.fetchError ? 'error' : 'success'}>{this.state.resultMessage}</div>
+          <div id="fetch-playlist-result" className={this.state.fetchError ? 'error' : 'success'}>{this.state.resultMessage}</div>
         }
       </div>
     );

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 
 import { Main } from './components/main';
-import { SpotifyDownloader } from './spotdl';
+import { SpotifyDownloader } from '../main/spotdl.js';
 
 import './scss/main.scss';
 
