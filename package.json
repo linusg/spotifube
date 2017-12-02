@@ -17,6 +17,7 @@
     "babel-preset-react": "^6.24.1",
     "electron": "1.7.8",
     "electron-builder": "^19.34.1",
+    "electron-config": "^1.0.0",
     "electron-webpack": "1.8.0",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
