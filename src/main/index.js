@@ -41,6 +41,10 @@ function createMainWindow() {
   return window;
 }
 
+app.setName('Spotifube');
+app.setPath('userData', app.getPath('userData').replace(/Electron/i, 'Spotifube'));
+console.log(app.getPath('userData'));
+
 // Quit application when all windows are closed
 app.on('window-all-closed', () => {
   // On macOS it is common for applications to stay open

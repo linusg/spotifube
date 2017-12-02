@@ -1,6 +1,7 @@
 {
-  "name": "electron-webpack-quick-start",
-  "version": "0.0.0",
+  "name": "spotifube",
+  "productName": "spotifube",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "dev": "electron-webpack dev",

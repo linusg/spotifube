@@ -1,6 +1,8 @@
 import Store from 'electron-store';
 import React from 'react';
 
+import { SpotifyDownloader } from '../../../main/spotdl.js';
+
 const store = new Store();
 
 
@@ -41,6 +43,7 @@ export class InitialConfig extends React.Component {
     this.setState({formProcessed: true});
     store.set('python_binary', this.state.pythonBinary);
     store.set('spotdl_script', this.state.spotdlScript);
+    window.spotifyDownloader = new SpotifyDownloader(store.get('python_binary'), store.get('spotdl_script'));
     event.preventDefault();
   }
 
