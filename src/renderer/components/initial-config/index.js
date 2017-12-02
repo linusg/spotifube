@@ -1,7 +1,7 @@
-import Config from 'electron-config';
+import Store from 'electron-store';
 import React from 'react';
 
-const config = new Config();
+const store = new Store();
 
 
 export class InitialConfig extends React.Component {
@@ -39,13 +39,13 @@ export class InitialConfig extends React.Component {
 
   handleSubmit(event) {
     this.setState({formProcessed: true});
-    config.set('python_binary', this.state.pythonBinary);
-    config.set('spotdl_script', this.state.spotdlScript);
+    store.set('python_binary', this.state.pythonBinary);
+    store.set('spotdl_script', this.state.spotdlScript);
     event.preventDefault();
   }
 
   render() {
-    if (this.state.formProcessed || (config.get('python_binary') && config.get('spotdl_script'))) return null;
+    if (this.state.formProcessed || (store.get('python_binary') && store.get('spotdl_script'))) return null;
     return (
       <div id="initial-config">
         <form onSubmit={this.handleSubmit}>
