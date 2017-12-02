@@ -10,7 +10,7 @@ let mainWindow;
 
 function createMainWindow() {
   // Construct new BrowserWindow
-  const window = new BrowserWindow({title: 'Spotifube'});
+  const window = new BrowserWindow({title: 'Spotifube', width: 600, height: 450});
 
   // Set url for `win`
     // points to `webpack-dev-server` in development
@@ -40,6 +40,10 @@ function createMainWindow() {
 
   return window;
 }
+
+app.setName('spotifube');
+app.setPath('userData', app.getPath('userData').replace(/Electron/i, 'spotifube'));
+console.log(app.getPath('userData'));
 
 // Quit application when all windows are closed
 app.on('window-all-closed', () => {
