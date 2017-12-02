@@ -41,8 +41,8 @@ function createMainWindow() {
   return window;
 }
 
-app.setName('Spotifube');
-app.setPath('userData', app.getPath('userData').replace(/Electron/i, 'Spotifube'));
+app.setName('spotifube');
+app.setPath('userData', app.getPath('userData').replace(/Electron/i, 'spotifube'));
 console.log(app.getPath('userData'));
 
 // Quit application when all windows are closed
