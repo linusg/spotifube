@@ -48,7 +48,7 @@ export class InitialConfig extends React.Component {
     if (this.state.formProcessed || (store.get('python_binary') && store.get('spotdl_script'))) return null;
     return (
       <div id="initial-config">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="p-20">
           <input type="text" value={this.state.pythonBinary} onChange={this.handleChangePython} placeholder="Path to Python executable" className="mb-40 block full-width" />
           <input type="text" value={this.state.spotdlScript} onChange={this.handleChangeSpotdl} placeholder="Path top spotdl.py script" className="mb-40 block full-width" />
           <input type="submit" value="Save" disabled={this.state.submitDisabled} className="bg-green fg-light block centered" />

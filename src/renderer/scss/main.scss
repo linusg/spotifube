@@ -122,6 +122,27 @@ input[placeholder] { text-overflow: ellipsis; }
   }
 }
 
+#initial-config {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+  background: rgba(black, 0.7);
+
+  form {
+   position: absolute;
+   overflow-y: auto;
+   top: 40px;
+   bottom: 40px;
+   left: 40px;
+   right: 40px;
+   background: $color-dark;
+   border-radius: 4px;
+  }
+}
+
 #fetch-playlist {
   form {
     position: relative;
