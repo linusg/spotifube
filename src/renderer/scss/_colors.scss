@@ -3,9 +3,9 @@ $color-light: #fff;
 $color-dark: #191414;
 $color-red: #ce2e2e;
 
-.bg-green { background-color: $color-green !important; }
-.bg-light { background-color: $color-light !important; }
-.bg-dark { background-color: $color-dark !important; }
-.fg-green { color: #1DB954 !important; }
-.fg-light { color: #FFF !important; }
-.fg-dark { color: #191414 !important; }
+.bg-green { background-color: $color-green; }
+.bg-light { background-color: $color-light; }
+.bg-dark { background-color: $color-dark; }
+.fg-green { color: #1DB954; }
+.fg-light { color: #FFF; }
+.fg-dark { color: #191414; }
