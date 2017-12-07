@@ -95,10 +95,10 @@ input[placeholder] { text-overflow: ellipsis; }
   }
 
   & > div {
-    width: 10px;
-    height: 10px;
+    width: 25px;
+    height: 25px;
     background-color: $color-green;
-    border-radius: 5px;
+    border-radius: 25px;
     display: inline-block;
     margin: 4px;
     animation: bounce 1.2s infinite ease-in-out both;
@@ -108,7 +108,7 @@ input[placeholder] { text-overflow: ellipsis; }
     }
 
     &.bounce3 {
-      animation-delay: 0.4s;
+      animation-delay: 0.6s;
     }
   }
 }
@@ -134,10 +134,10 @@ input[placeholder] { text-overflow: ellipsis; }
   form {
    position: absolute;
    overflow-y: auto;
-   top: 40px;
-   bottom: 40px;
-   left: 40px;
-   right: 40px;
+   top: 20px;
+   bottom: 20px;
+   left: 20px;
+   right: 20px;
    background: $color-dark;
    border-radius: 4px;
   }
