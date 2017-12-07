@@ -1,4 +1,5 @@
 import React from 'react';
+const fs = require('fs');
 
 import { Loader } from '../loader';
 
@@ -12,6 +13,7 @@ export class PlaylistInput extends React.Component {
       submitDisabled: true,
       formProcessed: false,
       playlistFetched: false,
+      playlistFile: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -39,7 +41,7 @@ export class PlaylistInput extends React.Component {
         if (code !== 0) {
           var resultMessage;
           if (code === 10) resultMessage = 'Invalid playlist URL!';
-          else if (code === 11) resultMessage = 'Unable to find playlist, make sure the playlist is set to publicly visible!';
+          else if (code === 11) resultMessage = 'Unable to find playlist. Ensure the playlist is set to publicly visible!';
           else resultMessage = 'Unknown error!';
 
           this.setState({
