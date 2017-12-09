@@ -51,7 +51,6 @@ export class PlaylistInput extends React.Component {
             submitDisabled: true,
             formProcessed: false,
             playlistFetched: false,
-            numberSongs: '',
             playlistFile: '',
           });
         } else {
