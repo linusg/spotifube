@@ -13,7 +13,7 @@ export class PlaylistInput extends React.Component {
       submitDisabled: true,
       formProcessed: false,
       playlistFetched: false,
-      playlistFile: false,
+      playlistFile: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -34,7 +34,7 @@ export class PlaylistInput extends React.Component {
     window.spotifyDownloader.addArgument('-p', this.state.playlistUrl);
     window.spotifyDownloader.execute(
       data => {
-        this.setState({resultMessage: data});
+        this.setState({resultMessage: data,});
       },
       console.error,
       (code, signal) => {
@@ -50,10 +50,18 @@ export class PlaylistInput extends React.Component {
             resultMessage: resultMessage,
             submitDisabled: true,
             formProcessed: false,
-            playlistFetched: false
+            playlistFetched: false,
+            numberSongs: '',
+            playlistFile: '',
           });
         } else {
-          this.setState({playlistFetched: true, fetchError: false});
+          let splitMessage = this.state.resultMessage.split(" ");
+          this.setState({
+            playlistFetched: true, 
+            fetchError: false,
+            resultMessage: splitMessage[1] + " songs are available to download in this playlist.",
+            listFile: splitMessage[4]
+          });
         }
       }
     );
