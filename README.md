@@ -1,14 +1,17 @@
 # Spotifube
 
-A `GUI` for the [@ritiek]()'s [`spotify-downloader`](https://github.com/ritiek/spotify-downloader/) project.
+A `GUI` for [@ritiek](https://github.com/ritiek)'s [`spotify-downloader`](https://github.com/ritiek/spotify-downloader/) project.
 
-## What is spotify-downloader?
-`spotify-downloader` is a command-line tool that matches Spotify tracks/playlists to youtube videos and downloads them as mp3/m4a, with id3, album art, etc.
+## Purpose
 
-## Why Spotifube
-Spotifube will provide initially (MVP) a simple UI to drag and drop playlist links, fetch the tracks inside of these playlists and provide a way to the user download these songs into a folder.
+Spotifube will initially provide (MVP) a simple GUI for [`spotify-downloader`](https://github.com/ritiek/spotify-downloader/) that allows users to drag and drop playlist links, to fetch the tracks inside of these playlists and to download these songs into a folder.
+
+### What is spotify-downloader
+
+[`spotify-downloader`](https://github.com/ritiek/spotify-downloader/) is a command-line tool that matches Spotify tracks/playlists to youtube videos and downloads them as mp3/m4a, with id3, album art, etc.
 
 ## Contributing
+
 Simply clone/download this reposity, install dependencies, and get started.
 
 The use of the [yarn](https://yarnpkg.com/) package manager is **strongly** recommended, as opposed to using `npm`.
