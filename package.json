@@ -1,33 +1,94 @@
 {
-  "name": "spotifube",
-  "productName": "spotifube",
-  "version": "0.1.0",
-  "license": "MIT",
-  "scripts": {
-    "dev": "electron-webpack dev",
-    "compile": "electron-webpack",
-    "dist": "DEBUG=electron-builder yarn compile && DEBUG=electron-builder electron-builder",
-    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
-  },
-  "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "source-map-support": "^0.5.0"
-  },
-  "devDependencies": {
-    "babel-preset-react": "^6.24.1",
-    "electron": "1.7.8",
-    "electron-builder": "^19.34.1",
-    "electron-store": "^1.3.0",
-    "electron-webpack": "1.9.0",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
-    "webpack": "^3.6.0",
-    "webpack-build-notifier": "^0.1.16"
-  },
-  "electronWebpack": {
-    "renderer": {
-      "webpackConfig": "webpack.renderer.additions.js"
+    "name": "spotifube",
+    "productName": "spotifube",
+    "author": {
+        "name": "Djalma Araújo"
+    },
+    "readme": "README.md",
+    "version": "0.1.0",
+    "license": "MIT",
+    "scripts": {
+        "dev": "electron-webpack dev",
+        "compile": "electron-webpack",
+        "dist": "yarn compile && electron-builder",
+        "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+        "electron-toolkit": "electron ./node_modules/electron-toolkit"
+    },
+    "dependencies": {
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "source-map-support": "^0.5.0"
+    },
+    "devDependencies": {
+        "babel-preset-react": "^6.24.1",
+        "electron": "1.7.8",
+        "electron-builder": "^19.34.1",
+        "electron-store": "^1.3.0",
+        "electron-toolkit": "^1.0.24",
+        "electron-webpack": "1.9.0",
+        "node-sass": "^4.7.2",
+        "sass-loader": "^6.0.6",
+        "webpack": "^3.6.0",
+        "webpack-build-notifier": "^0.1.16"
+    },
+    "electronWebpack": {
+        "renderer": {
+            "webpackConfig": "webpack.renderer.additions.js"
+        }
+    },
+    "description": "A GUI for the spotify-downloader project.",
+    "build": {
+        "appId": "com.electron.spotifube",
+        "copyright": "Copyright © 2017 [object Object]",
+        "productName": "spotifube",
+        "electronVersion": "1.7.8",
+        "asar": true,
+        "directories": {
+            "app": "C:\\Users\\Shaurita\\Documents\\GitRepo\\spotifube",
+            "output": "dist"
+        },
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        },
+        "mac": {
+            "target": [
+                {
+                    "target": "dmg",
+                    "arch": [
+                        "x64"
+                    ]
+                },
+                {
+                    "target": "zip",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ],
+            "category": "public.app-category.music"
+        },
+        "linux": {
+            "target": [
+                {
+                    "target": "AppImage",
+                    "arch": [
+                        "x64"
+                    ]
+                },
+                {
+                    "target": "debian package (deb)",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        }
     }
-  }
 }

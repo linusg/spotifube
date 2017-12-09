@@ -1,4 +1,5 @@
 import React from 'react';
+const fs = require('fs');
 
 import { Loader } from '../loader';
 
@@ -12,6 +13,7 @@ export class PlaylistInput extends React.Component {
       submitDisabled: true,
       formProcessed: false,
       playlistFetched: false,
+      playlistFile: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,14 +34,14 @@ export class PlaylistInput extends React.Component {
     window.spotifyDownloader.addArgument('-p', this.state.playlistUrl);
     window.spotifyDownloader.execute(
       data => {
-        this.setState({resultMessage: data});
+        this.setState({resultMessage: data,});
       },
       console.error,
       (code, signal) => {
         if (code !== 0) {
           var resultMessage;
           if (code === 10) resultMessage = 'Invalid playlist URL!';
-          else if (code === 11) resultMessage = 'Unable to find playlist, make sure the playlist is set to publicly visible!';
+          else if (code === 11) resultMessage = 'Unable to find playlist. Ensure the playlist is set to publicly visible!';
           else resultMessage = 'Unknown error!';
 
           this.setState({
@@ -48,10 +50,17 @@ export class PlaylistInput extends React.Component {
             resultMessage: resultMessage,
             submitDisabled: true,
             formProcessed: false,
-            playlistFetched: false
+            playlistFetched: false,
+            playlistFile: '',
           });
         } else {
-          this.setState({playlistFetched: true, fetchError: false});
+          let splitMessage = this.state.resultMessage.split(" ");
+          this.setState({
+            playlistFetched: true, 
+            fetchError: false,
+            resultMessage: splitMessage[1] + " songs are available to download in this playlist.",
+            listFile: splitMessage[4]
+          });
         }
       }
     );
