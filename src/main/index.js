@@ -43,7 +43,6 @@ function createMainWindow() {
 
 app.setName('spotifube');
 app.setPath('userData', app.getPath('userData').replace(/Electron/i, 'spotifube'));
-console.log(app.getPath('userData'));
 
 // Quit application when all windows are closed
 app.on('window-all-closed', () => {

@@ -5,7 +5,6 @@ import { SpotifyDownloader } from '../../../main/spotdl.js';
 
 const store = new Store();
 
-
 export class InitialConfig extends React.Component {
   constructor(props) {
     super(props);
@@ -22,20 +21,20 @@ export class InitialConfig extends React.Component {
   }
 
   handleChangePython(event) {
-    let pythonBinary = event.target.value;
-    let submitDisabled = !(pythonBinary && this.state.spotdlScript);
+    const pythonBinary = event.target.value;
+    const submitDisabled = !(pythonBinary && this.state.spotdlScript);
     this.setState({
-      pythonBinary: pythonBinary,
-      submitDisabled: submitDisabled
+      pythonBinary,
+      submitDisabled
     });
   }
 
   handleChangeSpotdl(event) {
-    let spotdlScript = event.target.value;
-    let submitDisabled = !(spotdlScript && this.state.pythonBinary);
+    const spotdlScript = event.target.value;
+    const submitDisabled = !(spotdlScript && this.state.pythonBinary);
     this.setState({
-      spotdlScript: spotdlScript,
-      submitDisabled: submitDisabled
+      spotdlScript,
+      submitDisabled
     });
   }
 
